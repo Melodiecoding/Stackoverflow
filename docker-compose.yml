@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  stackoverflow:
+    image: stackoverflow
+    build:
+      context: .
+      dockerfile: ./Dockerfile
