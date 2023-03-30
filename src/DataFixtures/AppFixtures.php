@@ -20,13 +20,11 @@ class AppFixtures extends Fixture
         
         $users = [];
         for ($i = 0; $i < 10; $i++) {
-            $user = new User;
+            $user = new User();
             $user
-            ->setUsername($faker->firstName() . '_' . $faker->lastName())
-            ->setAvatar($faker->imageUrl(640, 480, 'person', true))
+            // ->setUsername($faker->firstName() . '_' . $faker->lastName())
             ->setEmail($faker->safeEmail())
-            ->setPassword($faker->sha256())
-            ->setIsSubscribed($faker->boolean())
+            ->setPassword('test')
             ->setRoles(['ROLE_USER']);
                 
             $users[] = $user;
@@ -40,7 +38,7 @@ class AppFixtures extends Fixture
             $question = new Question();
             $question
                 ->setTitle($faker->words(30, true))
-                ->setSendAt(DateTimeImmutable::createFromMutable($faker->dateTime()))
+                // ->setSendAt(DateTimeImmutable::createFromMutable($faker->dateTime()))
                 ->setContent($faker->sentence(30));
 
             $manager->persist($question);

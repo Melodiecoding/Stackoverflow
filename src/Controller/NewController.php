@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class QuestionController extends AbstractController
+class NewController extends AbstractController
 {
-    #[Route('/liste', name: 'app_question')]
+    #[Route('/new', name: 'app_new')]
     public function index(): Response
     {
-        return $this->render('question/list.html.twig', [
-            'controller_name' => 'QuestionController',
+        return $this->render('new/index.html.twig', [
+            'controller_name' => 'NewController',
         ]);
     }
 }
