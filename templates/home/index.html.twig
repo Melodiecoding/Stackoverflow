@@ -5,32 +5,34 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-        <div class="navbrand">
-          <img src="{{ asset('images/logoStack.png') }}" alt="Logo" width="50" height="44">
-          <p class="">Stack<strong>overmelow</strong></p>
+    <div class="navbar-brand">
+      <div class="logo"><img src="{{ asset('images/logoStack.png') }}" alt="Logo" width="50" height="44"></div>
+        <div class="titre">
+          <p>Stack<strong>overmelow</strong></p>
         </div>
-    </a>
+    </div>
     <div class="container-fluid">
       <form class="d-flex justify-content-end" role="search">
         <input class="form-control me-1 w-25" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-warning w-" type="submit">Search</button>
+        <button class="btn btn-outline searchBtn" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
 
-<div class="topList">
-  <h2>Top Questions</h2>
-  <button class="askBtn" href="#">Ask Question</button>
-</div>
-
-{% for question in questions %}
-<hr>
-  <div class="questionTitle">
-    <h3>{{question.title}}</h3>
-    <button class="detailsBtn">Show details</button>
+<section class="questionList">
+  <div class="topList">
+    <h2>Top Questions</h2>
+    <button class="askBtn" href="#">Ask Question</button>
   </div>
-{% endfor %}
+
+  {% for question in questions %}
+    <hr>
+    <div class="questionTitle">
+      <h3>{{question.title}}</h3>
+      <button class="btn-outline detailsBtn">Show details</button>
+    </div>
+  {% endfor %}
+</section>
 
 {% endblock %}
