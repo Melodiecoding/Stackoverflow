@@ -23,16 +23,18 @@
 <section class="questionList">
   <div class="topList">
     <h2>Top Questions</h2>
-    <button class="askBtn" href="#">Ask Question</button>
+    {% block actions %}
+      <a class="askBtn text-decoration-none d-flex align-items-center p-2" href="{{ path('app_forum') }}">Ask Question</a>
+    {% endblock %}
   </div>
 
   {% for question in questions %}
     <hr>
     <div class="questionTitle">
       <h3>{{question.title}}</h3>
-      <button class="btn-outline detailsBtn">Show details</button>
+      <button class="btn btn-outline detailsBtn">Show details</button>
     </div>
   {% endfor %}
-</section>
 
+</section>
 {% endblock %}

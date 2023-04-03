@@ -38,7 +38,7 @@ class AppFixtures extends Fixture
             $question = new Question();
             $question
                 ->setTitle($faker->words(30, true))
-                // ->setSendAt(DateTimeImmutable::createFromMutable($faker->dateTime()))
+                ->setSendAt(DateTimeImmutable::createFromMutable($faker->dateTime()))
                 ->setContent($faker->sentence(30));
 
             $manager->persist($question);

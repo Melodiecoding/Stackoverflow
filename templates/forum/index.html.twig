@@ -1,20 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ForumController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="navbar-brand">
+      <div class="logo"><img src="{{ asset('images/logoStack.png') }}" alt="Logo" width="50" height="44"></div>
+        <div class="titre">
+          <p>Stack<strong>overmelow</strong></p>
+        </div>
+    </div>
+    <div class="container-fluid">
+      <form class="d-flex justify-content-end" role="search">
+        <input class="form-control me-1 w-25" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline searchBtn" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/Stackoverflow/src/Controller/ForumController.php'|file_link(0) }}">src/Controller/ForumController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/Stackoverflow/templates/forum/index.html.twig'|file_link(0) }}">templates/forum/index.html.twig</a></code></li>
-    </ul>
+<div class="questionTitle">
+    <h3>{{question.title}}</h3>
+    
 </div>
 {% endblock %}
